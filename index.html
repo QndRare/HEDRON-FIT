@@ -1,1 +1,406 @@
-# HEDRON-FIT
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEDRON FIT</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: gray;
+        }
+
+        /* BANNER */
+
+        .banner {
+            height: 90vh;
+            background-image: url("Marca.jpeg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Partículas */
+
+        .banner::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+            radial-gradient(white 2px, transparent 2px),
+            radial-gradient(gray 1px, transparent 1px),
+            radial-gradient(white 1px, transparent 1px);
+
+            background-size: 120px 120px;
+            animation: particles 20s linear infinite;
+            opacity: 0.15;
+        }
+
+        @keyframes particles {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(100px);
+            }
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 2;
+            background: rgba(0,0,0,0.65);
+            padding: 50px;
+            border-radius: 25px;
+            border: 2px solid white;
+            backdrop-filter: blur(6px);
+            animation: aparecer 1.5s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .banner-text h2 {
+            font-size: 70px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            text-shadow: 0px 0px 20px white;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0px 0px 10px white;
+            }
+
+            to {
+                text-shadow: 0px 0px 30px white;
+            }
+        }
+
+        .banner-text p {
+            font-size: 22px;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .banner-text button {
+            padding: 16px 35px;
+            border: none;
+            background: white;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .banner-text button:hover {
+            transform: scale(1.1);
+            background: black;
+            color: white;
+            border: 2px solid white;
+        }
+
+        /* PRODUTOS */
+
+        .produtos {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .produtos h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #111;
+            border: 2px solid white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 20px white;
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            font-size: 24px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .card a {
+            text-decoration: none;
+        }
+
+        .card button {
+            margin-bottom: 20px;
+            padding: 12px 25px;
+            border: none;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card button:hover {
+            background-color: gray;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* SOBRE */
+
+        .sobre {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #111;
+        }
+
+        .sobre h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .sobre p {
+            max-width: 700px;
+            margin: auto;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid white;
+            margin-top: 50px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <img src="Marca.jpeg.jpeg" alt="Logo HEDRON FIT">
+            <h1>HEDRON FIT</h1>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+    </header>
+
+    <!-- BANNER -->
+
+    <section class="banner" id="inicio">
+
+        <div class="banner-text">
+
+            <h2>ESTILO OVERSIZED</h2>
+
+            <p>
+                As melhores oversized preta e branca para elevar seu estilo.
+            </p>
+
+            <a href="#produtos">
+                <button>COMPRAR AGORA</button>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUTOS -->
+
+    <section class="produtos" id="produtos">
+
+        <h2>NOSSAS CAMISAS</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img src="camisa1.jpeg.jpeg" alt="Camisa oversized preta">
+
+                <h3>Diraeth Oversized</h3>
+
+                <p>R$ 89,90</p>
+
+                <a href="75998228274" target="_blank">
+                    <button>Comprar</button>
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="camisa2.jpeg.jpeg" alt="Camisa oversized branca">
+
+                <h3>Kitthi Lightning</h3>
+
+                <p>R$ 99,90</p>
+
+                <a href="75998228274" target="_blank">
+                    <button>Comprar</button>
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="camisa3.jpeg.jpeg" alt="Camisa Jesus Is King">
+
+                <h3>Jesus Is King</h3>
+
+                <p>R$ 109,90</p>
+
+                <a href="75998228274" target="_blank">
+                    <button>Comprar</button>
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="camisa4.jpeg.jpeg" alt="Camisa Heart Shadow">
+
+                <h3>Heart Shadow</h3>
+
+                <p>R$ 94,90</p>
+
+                <a href="75998228274" target="_blank">
+                    <button>Comprar</button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section class="sobre" id="sobre">
+
+        <h2>SOBRE A LOJA</h2>
+
+        <p>
+            A HEDRON FIT traz roupas modernas no estilo streetwear,
+            com camisetas oversized exclusivas em preto e branco.
+            Nosso foco é conforto, estilo e personalidade para quem gosta
+            de moda urbana diferenciada.
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer id="contato">
+
+        <p>© 2026 HEDRON FIT - Todos os direitos reservados.</p>
+
+    </footer>
+
+</body>
+
+</html>
