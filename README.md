@@ -1,1 +1,0 @@
-# HEDRON-FIT
